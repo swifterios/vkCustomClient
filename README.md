@@ -1,0 +1,2 @@
+# vkCustomClient
+for Flypika
