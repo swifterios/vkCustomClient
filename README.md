@@ -1,2 +1,1 @@
-# vkCustomClient
-for Flypika
+Project for Flypika 
