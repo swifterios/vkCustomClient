@@ -6,31 +6,27 @@
 //
 
 import UIKit
+import VK_ios_sdk
 
 class LoginViewController: UIViewController {
 
+    private var loginService: LoginService!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-    }
-    
-//    @IBAction func loginButton(_ sender: UIButton) {
-//
-//    }
-    
-    @IBAction func loginButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
-        
         if #available(iOS 13.0, *) {
-            let tabbarVC = storyboard.instantiateViewController(identifier: "TabBar")
-            navigationController?.pushViewController(tabbarVC, animated: true)
+            loginService = SceneDelegate.shared().loginService
         } else {
             // Fallback on earlier versions
-            print("HELLO 10.0+")
         }
     }
     
-}
+    @IBAction func loginButton(_ sender: UIButton) {
+        if #available(iOS 13.0, *) {
+            loginService.wakeUpSession()
+        } else {
 
+        }
+    }
+}

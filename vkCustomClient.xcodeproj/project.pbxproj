@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1FA2EB730B496F66E392572A /* Pods_vkCustomClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09ABBCFA004A42F40EB67B05 /* Pods_vkCustomClient.framework */; };
-		ECA91350268B30DB00971A3D /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA9134F268B30DB00971A3D /* LoginService.swift */; };
+		EC55625C268C581D004A8CB9 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC55625B268C581D004A8CB9 /* LoginService.swift */; };
+		EC9868DB268C89DC0072AE93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9868DA268C89DC0072AE93 /* Main.storyboard */; };
 		ECF906DC268B06C70070E433 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF906DB268B06C70070E433 /* AppDelegate.swift */; };
 		ECF906DE268B06C70070E433 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF906DD268B06C70070E433 /* SceneDelegate.swift */; };
 		ECF906E0268B06C70070E433 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF906DF268B06C70070E433 /* LoginViewController.swift */; };
 		ECF906E5268B06C90070E433 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECF906E4268B06C90070E433 /* Assets.xcassets */; };
 		ECF906E8268B06C90070E433 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF906E6268B06C90070E433 /* LaunchScreen.storyboard */; };
-		ECF906F1268B194D0070E433 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF906F0268B194D0070E433 /* Main.storyboard */; };
 		ECF906F4268B1DF50070E433 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF906F3268B1DF50070E433 /* TabBar.storyboard */; };
 		ECF906F6268B1E370070E433 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF906F5268B1E370070E433 /* TabBarViewController.swift */; };
 		ECF906FA268B21770070E433 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF906F9268B21770070E433 /* NewsViewController.swift */; };
@@ -23,7 +23,8 @@
 /* Begin PBXFileReference section */
 		09ABBCFA004A42F40EB67B05 /* Pods_vkCustomClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vkCustomClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD6254630F7D0544A695B09 /* Pods-vkCustomClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vkCustomClient.debug.xcconfig"; path = "Target Support Files/Pods-vkCustomClient/Pods-vkCustomClient.debug.xcconfig"; sourceTree = "<group>"; };
-		ECA9134F268B30DB00971A3D /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		EC55625B268C581D004A8CB9 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		EC9868DA268C89DC0072AE93 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/Main.storyboard"; sourceTree = "<group>"; };
 		ECF906D8268B06C70070E433 /* vkCustomClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vkCustomClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF906DB268B06C70070E433 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECF906DD268B06C70070E433 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,11 +32,9 @@
 		ECF906E4268B06C90070E433 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECF906E7268B06C90070E433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECF906E9268B06C90070E433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ECF906F0268B194D0070E433 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/Main.storyboard"; sourceTree = "<group>"; };
 		ECF906F3268B1DF50070E433 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		ECF906F5268B1E370070E433 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		ECF906F9268B21770070E433 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
-		ECF906FC268B27990070E433 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FBD92C8DA4C5F4152DFC69C7 /* Pods-vkCustomClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vkCustomClient.release.xcconfig"; path = "Target Support Files/Pods-vkCustomClient/Pods-vkCustomClient.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +67,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EC55625A268C57E8004A8CB9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EC55625B268C581D004A8CB9 /* LoginService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		ECF906CF268B06C70070E433 = {
 			isa = PBXGroup;
 			children = (
@@ -93,8 +100,8 @@
 				ECF906F2268B1C980070E433 /* TabBar */,
 				ECF906DB268B06C70070E433 /* AppDelegate.swift */,
 				ECF906DD268B06C70070E433 /* SceneDelegate.swift */,
+				EC9868DA268C89DC0072AE93 /* Main.storyboard */,
 				ECF906E4268B06C90070E433 /* Assets.xcassets */,
-				ECF906F0268B194D0070E433 /* Main.storyboard */,
 				ECF906E6268B06C90070E433 /* LaunchScreen.storyboard */,
 				ECF906E9268B06C90070E433 /* Info.plist */,
 			);
@@ -130,9 +137,8 @@
 		ECF906FB268B278D0070E433 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				ECF906FC268B27990070E433 /* Main.storyboard */,
+				EC55625A268C57E8004A8CB9 /* Service */,
 				ECF906DF268B06C70070E433 /* LoginViewController.swift */,
-				ECA9134F268B30DB00971A3D /* LoginService.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -197,9 +203,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECF906F4268B1DF50070E433 /* TabBar.storyboard in Resources */,
-				ECF906F1268B194D0070E433 /* Main.storyboard in Resources */,
 				ECF906E8268B06C90070E433 /* LaunchScreen.storyboard in Resources */,
 				ECF906E5268B06C90070E433 /* Assets.xcassets in Resources */,
+				EC9868DB268C89DC0072AE93 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECF906F6268B1E370070E433 /* TabBarViewController.swift in Sources */,
-				ECA91350268B30DB00971A3D /* LoginService.swift in Sources */,
+				EC55625C268C581D004A8CB9 /* LoginService.swift in Sources */,
 				ECF906E0268B06C70070E433 /* LoginViewController.swift in Sources */,
 				ECF906DC268B06C70070E433 /* AppDelegate.swift in Sources */,
 				ECF906FA268B21770070E433 /* NewsViewController.swift in Sources */,
@@ -326,7 +332,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -381,7 +387,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -400,7 +406,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NUMRL3MBS4;
 				INFOPLIST_FILE = vkCustomClient/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -421,7 +427,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NUMRL3MBS4;
 				INFOPLIST_FILE = vkCustomClient/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
