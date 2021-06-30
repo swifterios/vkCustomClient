@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="2065" y="820"/>
         </scene>
-        <!--View Controller-->
+        <!--News View Controller-->
         <scene sceneID="r16-Ag-dWs">
             <objects>
-                <viewController id="9o5-DV-fba" sceneMemberID="viewController">
+                <viewController id="9o5-DV-fba" customClass="NewsViewController" customModule="vkCustomClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2y9-Fm-axf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -5,25 +5,55 @@
 //  Created by Владислав on 29.06.2021.
 //
 
+import Foundation
 import UIKit
+import Moya
 
 class NewsViewController: LoginViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    let provider = MoyaProvider<NewsService>()
+    
+    private var state: State = .loading {
+      didSet {
+        switch state {
+        case .ready: print(".ready")
+        case .loading: print(".loading")
+        case .error: print(".error")
+        }
+      }
     }
     
-    // MARK: TableView functions
-    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 1
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        return UITableViewCell()
-//    }
-    
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        state = .loading
+        
+        provider.request(.getNewsFeed) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+        
+            case .success(let responce):
+                
+                do {
+                    print(try responce.mapJSON())
+                } catch  {
+                    self.state = .error
+                    print("catch error")
+                }
+                
+            case .failure:
+                print("failure")
+                self.state = .error
+            }
+        }
+    }
+}
+
+extension NewsViewController {
+    enum State {
+        case loading
+        case ready
+        case error
+    }
 }

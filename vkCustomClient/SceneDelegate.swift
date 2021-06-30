@@ -57,12 +57,13 @@ extension SceneDelegate: AuthServiceDelegate {
     
     func authServiceSignIn() {
         let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
-        let tabbarVC = storyboard.instantiateViewController(identifier: "TabBar")
-        window?.rootViewController = tabbarVC
+        let tabBarVierController = storyboard.instantiateViewController(identifier: "TabBar")
+        window?.rootViewController = tabBarVierController
+        print("AUTH")
     }
     
     func authServiceSignInDidFail() {
-        
+        print("ERROR")
     }
 }
 

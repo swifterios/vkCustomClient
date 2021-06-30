@@ -34,13 +34,14 @@ class LoginService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     
     
     func wakeUpSession() {
-        let scope = ["wall", "photos"]
+        let scope = ["wall", "friends", "photos"]
         
         VKSdk.wakeUpSession(scope) { [weak self] (state, erorr) in
             guard let self = self else { return }
             
             if state == .initialized {
                 VKSdk.authorize(scope)
+                
             }
             
             if state == .authorized {
@@ -52,8 +53,10 @@ class LoginService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     }
     
     func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
+        print("vkSdkAccessAuthorizationFinished")
         if result.token != nil {
             delegate?.authServiceSignIn()
+            
         }
     }
     
