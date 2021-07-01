@@ -9,51 +9,31 @@ import Foundation
 import UIKit
 import Moya
 
+protocol InformingDelegate {
+    func valueChanged() -> [NewsModel]?
+}
+
 class NewsViewController: LoginViewController {
     
-    let provider = MoyaProvider<NewsService>()
+    let newsService = NewsService()
+    var newsData: [NewsModel]?
+    var delegate: InformingDelegate?
     
-    private var state: State = .loading {
-      didSet {
-        switch state {
-        case .ready: print(".ready")
-        case .loading: print(".loading")
-        case .error: print(".error")
-        }
-      }
+    
+    func callFromOtherClass() {
+        self.newsData = self.delegate?.valueChanged()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        newsService.getNews()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        state = .loading
-        
-        provider.request(.getNewsFeed) { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-        
-            case .success(let responce):
-                
-                do {
-                    print(try responce.mapJSON())
-                } catch  {
-                    self.state = .error
-                    print("catch error")
-                }
-                
-            case .failure:
-                print("failure")
-                self.state = .error
-            }
-        }
-    }
-}
-
-extension NewsViewController {
-    enum State {
-        case loading
-        case ready
-        case error
+        print(newsData) //  nil??
     }
 }

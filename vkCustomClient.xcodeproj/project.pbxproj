@@ -11,6 +11,7 @@
 		EC55625C268C581D004A8CB9 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC55625B268C581D004A8CB9 /* LoginService.swift */; };
 		EC9868DB268C89DC0072AE93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9868DA268C89DC0072AE93 /* Main.storyboard */; };
 		EC9868DE268C9A6D0072AE93 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9868DD268C9A6D0072AE93 /* NewsService.swift */; };
+		EC9868E5268CD8CD0072AE93 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9868E4268CD8CD0072AE93 /* News.swift */; };
 		ECF906DC268B06C70070E433 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF906DB268B06C70070E433 /* AppDelegate.swift */; };
 		ECF906DE268B06C70070E433 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF906DD268B06C70070E433 /* SceneDelegate.swift */; };
 		ECF906E0268B06C70070E433 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF906DF268B06C70070E433 /* LoginViewController.swift */; };
@@ -27,6 +28,7 @@
 		EC55625B268C581D004A8CB9 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		EC9868DA268C89DC0072AE93 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/Main.storyboard"; sourceTree = "<group>"; };
 		EC9868DD268C9A6D0072AE93 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		EC9868E4268CD8CD0072AE93 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		ECF906D8268B06C70070E433 /* vkCustomClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vkCustomClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF906DB268B06C70070E433 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECF906DD268B06C70070E433 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		EC9868E3268CD8C10072AE93 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC9868E4268CD8CD0072AE93 /* News.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		ECF906CF268B06C70070E433 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +142,7 @@
 		ECF906F7268B21310070E433 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				EC9868E3268CD8C10072AE93 /* Model */,
 				EC9868DC268C9A360072AE93 /* Service */,
 				ECF906F9268B21770070E433 /* NewsViewController.swift */,
 			);
@@ -271,6 +282,7 @@
 			files = (
 				ECF906F6268B1E370070E433 /* TabBarViewController.swift in Sources */,
 				EC55625C268C581D004A8CB9 /* LoginService.swift in Sources */,
+				EC9868E5268CD8CD0072AE93 /* News.swift in Sources */,
 				ECF906E0268B06C70070E433 /* LoginViewController.swift in Sources */,
 				EC9868DE268C9A6D0072AE93 /* NewsService.swift in Sources */,
 				ECF906DC268B06C70070E433 /* AppDelegate.swift in Sources */,

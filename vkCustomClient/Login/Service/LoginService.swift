@@ -34,29 +34,32 @@ class LoginService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     
     
     func wakeUpSession() {
-        let scope = ["wall", "friends", "photos"]
+        let scope = ["wall", "friends", "photos", "offline"]
         
         VKSdk.wakeUpSession(scope) { [weak self] (state, erorr) in
             guard let self = self else { return }
             
             if state == .initialized {
                 VKSdk.authorize(scope)
-                
             }
             
             if state == .authorized {
                 self.delegate?.authServiceSignIn()
-            }else {
+                
+                let token = VKSdk.accessToken().accessToken!
+                UserDefaults.standard.setValue(token as String, forKey: "userToken")
+            } else {
                 self.delegate?.authServiceSignInDidFail()
             }
         }
     }
     
     func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
-        print("vkSdkAccessAuthorizationFinished")
         if result.token != nil {
+            let res = result.token!
+            UserDefaults.standard.setValue(res, forKey: "userToken")
+            //print(UserDefaults.standard.value(forKey: "userToken"))
             delegate?.authServiceSignIn()
-            
         }
     }
     
@@ -68,8 +71,6 @@ class LoginService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
         delegate?.authServiceShootShow(viewController: controller)
     }
     
-    func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {
-        
-    }
+    func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {}
 
 }

@@ -8,8 +8,64 @@
 import Foundation
 import Moya
 
-public enum NewsService {
-    private static let accessToken =  "57f01a6e1fa55d69427c4f8530aa6e146981547bd7796563a2377691bca9f1b7b3d9d5ab718ec6ed46d4a"
+
+class NewsService: InformingDelegate {
+
+    let provider = MoyaProvider<News>()
+    var newsData: [NewsModel]?
+
+    func valueChanged() -> [NewsModel]? {
+        return newsData
+    }
+    
+    private var state: State = .loading {
+        didSet {
+            switch state {
+            case .ready: print(".ready")
+            case .loading: print(".loading")
+            case .error: print(".error")
+            }
+        }
+    }
+    
+    public func getNews() {
+        
+        provider.request(.getNewsFeed) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let response):
+                
+                do {
+                    self.state = .ready(try response.map(NewsResponse<NewsModel>.self).response.items)
+                } catch  {
+                    self.state = .error
+                    print(error)
+                }
+                
+                guard case .ready(let items) = self.state else { return }
+                self.newsData = items
+                
+                
+                let newsViewController: NewsViewController = NewsViewController()
+                newsViewController.delegate = self
+                newsViewController.callFromOtherClass()
+                
+                
+            case .failure:
+                print("failure")
+                self.state = .error
+            }
+        }
+    }
+}
+
+
+
+// MARK: Moya enums
+
+public enum News {
+    static let accessToken =  UserDefaults.standard.string(forKey: "userToken")!
     
     case getNewsFeed
 }
@@ -18,20 +74,20 @@ public enum NewsService {
 
 // MARK: Moya extensions
 
-extension NewsService: TargetType {
+extension News: TargetType {
     public var baseURL: URL {
         return URL(string: "https://api.vk.com/method")!
     }
     
     public var path: String {
         switch self {
-            case .getNewsFeed: return "/newsfeed.get"
+        case .getNewsFeed: return "/newsfeed.get"
         }
     }
     
     public var method: Moya.Method {
         switch self {
-            case .getNewsFeed: return .get
+        case .getNewsFeed: return .get
         }
     }
     
@@ -41,14 +97,11 @@ extension NewsService: TargetType {
     }
     
     public var task: Task {
-        
-//        let authParameters = ["access_token:" : NewsService.accessToken]
-        
         switch self {
         case .getNewsFeed:
             return .requestParameters(
                 parameters: [
-                    "access_token" : NewsService.accessToken,
+                    "access_token" : News.accessToken,
                     "filters" : "post",
                     "v" : "5.131",
                 ], encoding: URLEncoding.default)
@@ -61,5 +114,13 @@ extension NewsService: TargetType {
     
     public var validationType: ValidationType {
         return .successCodes
+    }
+}
+
+extension NewsService {
+    enum State {
+        case loading
+        case ready([NewsModel])
+        case error
     }
 }
