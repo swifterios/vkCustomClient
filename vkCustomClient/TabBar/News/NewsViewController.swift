@@ -5,25 +5,35 @@
 //  Created by Владислав on 29.06.2021.
 //
 
+import Foundation
 import UIKit
+import Moya
+
+protocol InformingDelegate {
+    func valueChanged() -> [NewsModel]?
+}
 
 class NewsViewController: LoginViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    let newsService = NewsService()
+    var newsData: [NewsModel]?
+    var delegate: InformingDelegate?
+    
+    
+    func callFromOtherClass() {
+        self.newsData = self.delegate?.valueChanged()
     }
     
-    // MARK: TableView functions
     
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 1
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        return UITableViewCell()
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        newsService.getNews()
+    }
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print(newsData) //  nil??
+    }
 }

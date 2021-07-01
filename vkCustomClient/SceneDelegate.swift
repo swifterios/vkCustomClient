@@ -9,7 +9,7 @@ import UIKit
 import VK_ios_sdk
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
     var loginService: LoginService!
     
@@ -19,12 +19,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let sd: SceneDelegate = (scene?.delegate as? SceneDelegate)!
         return sd
     }
-
+    
     @available(iOS 13.0, *)
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let _ = (scene as? UIWindowScene) else { return }
-
+        
         loginService = LoginService()
         loginService.delegate = self
     }
@@ -57,12 +57,12 @@ extension SceneDelegate: AuthServiceDelegate {
     
     func authServiceSignIn() {
         let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
-        let tabbarVC = storyboard.instantiateViewController(identifier: "TabBar")
-        window?.rootViewController = tabbarVC
+        let tabBarVierController = storyboard.instantiateViewController(identifier: "TabBar")
+        window?.rootViewController = tabBarVierController
     }
     
     func authServiceSignInDidFail() {
-        
+        print("ERROR")
     }
 }
 
